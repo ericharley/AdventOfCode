@@ -1,39 +1,27 @@
 import numpy as np
-from scipy import stats
 
-#with open('input.txt') as f:
-with open('test.txt') as f:
-    lines = f.readlines()
-
-n = len(lines[0].rstrip('\n'))
-a = np.zeros((1,n)) - 1
-
-for line in lines:
-    line = line.rstrip('\n')
-    b = np.array([int(x) for x in list(line)], ndmin=2)
-    a = np.concatenate((a,b))
-
-a = a[1:,:]
+a = np.genfromtxt('./input.txt', delimiter=1, dtype=int)
 
 b = np.copy(a)
 n = np.shape(b)[0]
-o = []
 i = 0
 while n > 1:
  if np.sum(b[:,i] == 0) > np.sum(b[:,i] == 1):
    # 0 most common
    b = b[b[:,i] == 0]
-   o += [0]
  else:
    # 1 most common
    b = b[b[:,i] == 1]
-   o += [1]
  n = np.shape(b)[0]
  i += 1
- #print(n)
 
-print(b)
-c = b[0].tolist()
+#c = b[0].tolist()
+#t = ''.join([str(int(x)) for x in c])
+#u = int(t, 2)
+
+# u = np.sum( (2*b[0]) ** np.flip(np.arange(len(b[0]))) )
+b = b[0]
+u = b.dot(2**np.arange(len(b))[::-1])
 
 b = np.copy(a)
 n = np.shape(b)[0]
@@ -47,20 +35,11 @@ while n > 1:
    b = b[b[:,i] == 1]
  n = np.shape(b)[0]
  i += 1
- #print(n)
 
-print(b)
 l = b[0].tolist()
-
-print(c)
-print(l)
-
 s = ''.join([str(int(x)) for x in l])
 v = int(s, 2)
-print(v)
 
-t = ''.join([str(int(x)) for x in c])
-u = int(t, 2)
-print(u)
+# v = np.power(x2,np.flip(x1))
 
 print(v*u)
