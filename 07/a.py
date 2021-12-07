@@ -17,7 +17,4 @@ a = np.mean(data)
 v1 = int(np.floor(a))
 v2 = int(np.ceil(a))
 
-if f(v1) < f(v2):
-    print(f(v1))
-else:
-    print(f(v2))
+print( np.min( [f(v1), f(v2)] ) )
