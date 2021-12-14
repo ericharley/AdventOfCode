@@ -42,10 +42,13 @@ for (d,v) in ins:
 
 # Part 2
 # Print Result
-for r in range(6):
- for c in range(40):
-  if int(paper[r,c]) >= 1:
-    print('#', end='')
-  else:
-    print('.', end='')
- print('')
+#for r in range(6):
+# for c in range(40):
+#  if int(paper[r,c]) >= 1:
+#    print('#', end='')
+#  else:
+#    print('.', end='')
+# print('')
+
+for line in paper:
+    print(''.join(['#' if c >= 1 else ' ' for c in line]))
