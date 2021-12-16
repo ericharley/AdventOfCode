@@ -13,6 +13,7 @@ class Graph:
     def neighbors(self, u):
         return self.edges[u].keys()
 
+
 def dijkstra(graph, start_vertex):
     D = {v:float('inf') for v in range(graph.v)}
     D[start_vertex] = 0
@@ -34,6 +35,7 @@ def dijkstra(graph, start_vertex):
                     pq.put((new_cost, neighbor))
     return D
 
+
 def risk(a):
   N = len(a)
   g = Graph(N*N)
@@ -51,26 +53,15 @@ def risk(a):
   return(D[c2v(N-1,N-1)])
 
 
-#with open("test.txt", 'r') as f:
-#with open("test2_40.txt", 'r') as f:
-with open("input.txt", 'r') as f:
-    a = [[int(n) for n in list(line.rstrip('\n'))] for line in f]
-
-print( risk(a) )
-
 def extend(cave):
     X, Y = len(cave), len(cave[0])
     return [[(cave[x%X][y%Y] + x//X+y//Y - 1)%9+1
         for y in range(5*Y)] for x in range(5*X)]
 
+
+with open("input.txt", 'r') as f:
+    a = [[int(n) for n in list(line.rstrip('\n'))] for line in f]
+
+print( risk(a) )
+
 print( risk(extend(a)) )
-
-def print_array(a):
-  s = [[str(e) for e in row] for row in a]
-  lens = [max(map(len, col)) for col in zip(*s)]
-  fmt = ' '.join('{{:{}}}'.format(x) for x in lens)
-  table = [fmt.format(*row) for row in s]
-  print('\n'.join(table))
-
-#print_array(a)
-#print_array(ex)
