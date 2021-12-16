@@ -1,5 +1,5 @@
 from queue import PriorityQueue
-from collections import defaultdict
+from itertools import product 
 
 class Graph:
     def __init__(self, num_of_vertices):
@@ -30,8 +30,8 @@ def dijkstra(graph, start_vertex):
                old_cost = D[neighbor]
                new_cost = D[current_vertex] + distance
                if new_cost < old_cost:
-                    pq.put((new_cost, neighbor))
                     D[neighbor] = new_cost
+                    pq.put((new_cost, neighbor))
     return D
 
 def risk(a):
@@ -41,13 +41,11 @@ def risk(a):
   def c2v(i,j):
     return N*i + j
 
-  for i in range(N):
-   for j in range(N):
-    for dx in [-1, 0, +1]:
-      for dy in [-1, 0, +1]:
-        if not(dx == 0 and dy == 0) and (0 <= i+dx < N) and (0 <= j+dy < N):
-          if not(dx != 0 and dy != 0):
-            g.add_edge( c2v(i,j), c2v(i+dx,j+dy), a[i+dx][j+dy] )
+  for (i,j) in product(range(N), range(N)):
+    for (dx,dy) in product([-1, 0, +1], [-1, 0, +1]):
+      if not(dx == 0 and dy == 0) and not(dx != 0 and dy != 0):
+        if (0 <= i+dx < N) and (0 <= j+dy < N):
+          g.add_edge( c2v(i,j), c2v(i+dx,j+dy), a[i+dx][j+dy] )
 
   D = dijkstra(g, 0)
   return(D[c2v(N-1,N-1)])
@@ -65,6 +63,7 @@ def extend(cave):
     return [[(cave[x%X][y%Y] + x//X+y//Y - 1)%9+1
         for y in range(5*Y)] for x in range(5*X)]
 
+print( risk(extend(a)) )
 
 def print_array(a):
   s = [[str(e) for e in row] for row in a]
@@ -72,10 +71,6 @@ def print_array(a):
   fmt = ' '.join('{{:{}}}'.format(x) for x in lens)
   table = [fmt.format(*row) for row in s]
   print('\n'.join(table))
-
-
-ex = extend(a)
-print( risk(ex) )
 
 #print_array(a)
 #print_array(ex)
