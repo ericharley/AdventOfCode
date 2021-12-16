@@ -28,13 +28,13 @@ def doit(n):
      out[pair2] = out.get(pair2, 0) + f[pair]
    f = out
 
- freq = {}
- for ch in set(''.join(list(f.keys()))):
-   freq[ch] = 0
-   for k in f:
-     if ch in k[0]:
-        freq[ch] += f[k]
- #freq = { ch : sum([f[k] for k in f.keys() if ch == k[0]]) for ch in set(''.join(f.keys())) }
+# freq = {}
+# for ch in set(''.join(list(f.keys()))):
+#   freq[ch] = 0
+#   for k in f:
+#     if ch in k[0]:
+#        freq[ch] += f[k]
+ freq = { ch : sum([f[k] for k in f if ch == k[0]]) for ch in set(''.join(f.keys())) }
         
  freq[last_ch] += 1
 
