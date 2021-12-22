@@ -34,7 +34,7 @@ while len(cur) > 0:
         counts[1] += cur[(p0,s0,p1,s1)]
   
       # otherwise, neither player wins from this state on these rolls, so we propagate
-      # the state counts 
+      # the state counts
       else:
         nxt[(p0_,s0_,p1_,s1_)] = nxt.get((p0_,s0_,p1_,s1_),0) + cur[(p0,s0,p1,s1)]
 
