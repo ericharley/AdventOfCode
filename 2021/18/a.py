@@ -88,6 +88,7 @@ def magnitude(num):
    right = 2*magnitude(num[1])
  return left + right
 
+# Part 1
 with open("input.txt", "r") as file:
   lines = file.readlines()
   r = lines.pop(0).rstrip('\n')
@@ -96,6 +97,7 @@ with open("input.txt", "r") as file:
     r = reduce(add(r, line))
 print(magnitude(eval(r)))
 
+# Part 2
 l = []
 with open("input.txt", "r") as file:
   lines = file.readlines()
