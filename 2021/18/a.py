@@ -34,8 +34,8 @@ def explode(num):
       else :
         r2 = head
 
-      res = r2 + '0' + r1
-      return res
+      return r2 + '0' + r1
+      
     if c == '[':
       depth += 1
     if c == ']':
