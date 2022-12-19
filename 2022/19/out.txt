@@ -1,0 +1,210 @@
+#BP 1
+if BP = 1:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(3,5,0)
+ cost['geode_robot'] = Cost(3,0,18)
+
+#BP 2
+if BP = 2:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(4,16,0)
+ cost['geode_robot'] = Cost(2,0,15)
+
+#BP 3
+if BP = 3:
+ cost['ore_robot'] = Cost(3,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(4,19,0)
+ cost['geode_robot'] = Cost(4,0,11)
+
+#BP 4
+if BP = 4:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(2,13,0)
+ cost['geode_robot'] = Cost(2,0,9)
+
+#BP 5
+if BP = 5:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(2,14,0)
+ cost['geode_robot'] = Cost(4,0,15)
+
+#BP 6
+if BP = 6:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(3,10,0)
+ cost['geode_robot'] = Cost(2,0,10)
+
+#BP 7
+if BP = 7:
+ cost['ore_robot'] = Cost(2,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(4,16,0)
+ cost['geode_robot'] = Cost(4,0,17)
+
+#BP 8
+if BP = 8:
+ cost['ore_robot'] = Cost(2,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(3,19,0)
+ cost['geode_robot'] = Cost(4,0,12)
+
+#BP 9
+if BP = 9:
+ cost['ore_robot'] = Cost(3,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(3,17,0)
+ cost['geode_robot'] = Cost(2,0,13)
+
+#BP 10
+if BP = 10:
+ cost['ore_robot'] = Cost(3,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(4,8,0)
+ cost['geode_robot'] = Cost(2,0,10)
+
+#BP 11
+if BP = 11:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(2,7,0)
+ cost['geode_robot'] = Cost(3,0,8)
+
+#BP 12
+if BP = 12:
+ cost['ore_robot'] = Cost(3,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(3,18,0)
+ cost['geode_robot'] = Cost(4,0,16)
+
+#BP 13
+if BP = 13:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(2,20,0)
+ cost['geode_robot'] = Cost(3,0,9)
+
+#BP 14
+if BP = 14:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(4,6,0)
+ cost['geode_robot'] = Cost(3,0,11)
+
+#BP 15
+if BP = 15:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(2,16,0)
+ cost['geode_robot'] = Cost(4,0,16)
+
+#BP 16
+if BP = 16:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(4,5,0)
+ cost['geode_robot'] = Cost(3,0,19)
+
+#BP 17
+if BP = 17:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(3,5,0)
+ cost['geode_robot'] = Cost(4,0,11)
+
+#BP 18
+if BP = 18:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(4,18,0)
+ cost['geode_robot'] = Cost(3,0,13)
+
+#BP 19
+if BP = 19:
+ cost['ore_robot'] = Cost(3,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(3,9,0)
+ cost['geode_robot'] = Cost(3,0,7)
+
+#BP 20
+if BP = 20:
+ cost['ore_robot'] = Cost(2,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(2,14,0)
+ cost['geode_robot'] = Cost(3,0,20)
+
+#BP 21
+if BP = 21:
+ cost['ore_robot'] = Cost(2,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(2,20,0)
+ cost['geode_robot'] = Cost(2,0,17)
+
+#BP 22
+if BP = 22:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(4,14,0)
+ cost['geode_robot'] = Cost(3,0,16)
+
+#BP 23
+if BP = 23:
+ cost['ore_robot'] = Cost(3,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(2,20,0)
+ cost['geode_robot'] = Cost(3,0,18)
+
+#BP 24
+if BP = 24:
+ cost['ore_robot'] = Cost(2,0,0)
+ cost['clay_robot'] = Cost(2,0,0)
+ cost['obsidian_robot'] = Cost(2,20,0)
+ cost['geode_robot'] = Cost(2,0,14)
+
+#BP 25
+if BP = 25:
+ cost['ore_robot'] = Cost(2,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(4,16,0)
+ cost['geode_robot'] = Cost(3,0,13)
+
+#BP 26
+if BP = 26:
+ cost['ore_robot'] = Cost(3,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(3,9,0)
+ cost['geode_robot'] = Cost(2,0,10)
+
+#BP 27
+if BP = 27:
+ cost['ore_robot'] = Cost(4,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(3,20,0)
+ cost['geode_robot'] = Cost(2,0,19)
+
+#BP 28
+if BP = 28:
+ cost['ore_robot'] = Cost(3,0,0)
+ cost['clay_robot'] = Cost(3,0,0)
+ cost['obsidian_robot'] = Cost(3,15,0)
+ cost['geode_robot'] = Cost(2,0,8)
+
+#BP 29
+if BP = 29:
+ cost['ore_robot'] = Cost(3,0,0)
+ cost['clay_robot'] = Cost(4,0,0)
+ cost['obsidian_robot'] = Cost(4,18,0)
+ cost['geode_robot'] = Cost(4,0,12)
+
+#BP 30
+if BP = 30:
+ cost['ore_robot'] = Cost(2,0,0)
+ cost['clay_robot'] = Cost(2,0,0)
+ cost['obsidian_robot'] = Cost(2,10,0)
+ cost['geode_robot'] = Cost(2,0,11)
+
