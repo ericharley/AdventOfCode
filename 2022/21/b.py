@@ -59,18 +59,25 @@ def sign(x):
 # found these by hand for the input given
 a = 10**12  # f2(a) == -22291452152774
 b = 10**13  # f2(b) == 10689147494494
+sa = sign(f2(a))
+sb = sign(f2(b))
 
 while True:
+
   c = (a + b)//2
-  sa = sign(f2(a))
-  sb = sign(f2(b))
   sc = sign(f2(c))
+
   if sc == 0:
     print(c)
     break
+
   if sa != sc:
     a = a
     b = c
+    sb = sc
+
   else:
     a = c
     b = b
+    sa = sc
+
