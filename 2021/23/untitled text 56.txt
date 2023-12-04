@@ -1,0 +1,61 @@
+State
+
+#############
+#...........#
+###A#B#C#D###
+  #A#B#C#D#
+  #########
+  
+#############
+#...........#
+###A#B#C#D###
+  #A#B#C#D#
+  #########
+  
+#############
+#12345678901#
+###2#3#4#5###
+  #6#7#C8D#
+  #########
+  
+
+def move_cost(start_pos, end_pos, amphipod_type):
+  return (number of steps * cost[amphipod_type])
+
+can_move : return amphipods that can move (arne't blocked)
+
+can_move_to : return locations a given amphipod can move to from a given configuration
+
+ - Does not pass through any other amphipod
+ - Does not move from corridor to corridor
+ - Does not move from room to room
+ - Only move to room if that room is final destination
+ - Only move to bottom spot available in room
+ - Only move to room if free from amphipods not belonging there
+ - Do not exit room if you are in a room you belong in and all amphipods below you belong there as well
+ 
+ending_state, cost := do_move(initial state, move_from, move_to)
+
+def get_neighbors(current_state):
+ for move_from in can_move(current_state):
+   for move_to in can_move_to(current_state, move_from)
+     next_state, cost_of_move = do_move(current_state, move_from, move_to)
+     # current_state, move_from, move_to, next_state, cost_of_move
+
+
+starting from initial state
+priority queue of states
+while not final state in queue:
+ take cheapest state off queue,
+ compute set of next states, cost to move to those states
+ put them back onto queue with the sum of costs
+ (ignoring any states that we've already put on the queue at lower or equal cost)
+ 
+In particular, every next step is either:
+Moving a unit from its starting position to one of the 7 hallway positions; or
+Moving a unit from the hallway to its final position.
+
+One thing I wish I'd done differently would be to store the state as an array storing the unit at each position rather than the position of each unit, since I'm constantly needing to build the reverse array, but by the time I realized that I was already in too deep.
+
+
+    

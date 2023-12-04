@@ -1,0 +1,103 @@
+# [(1, 2, 3), (-2, 1, 3), (-1, -2, 3), (2, -1,3), (-3, 2, 1), (-2, -3,1), (3,-2,1), (2, 3, 1), (-1,2, -3), (-2, -1, -3), (1, -2, -3), (2, 1, -3), (3,2, -1), (-2, 3, -1), (-3, -2, -1), (2, -3, -1), (1,-3, 2), (3,1,2), (-1, 3, 2), (-3, -1, 2), (1, 3, -2), (-3, 1, -2), (-1, -3, -2), (3, -1, -2)]
+
+
+def generate_rotations(xyz_coords):
+  (x,y,z) = xyz_coords
+  return [(x, y, z), (-y, x, z), (-x, -y, z), (y, -x,z), (-z, y, x), (-y, -z,x), (z,-y,x), (y, z, x), (-x,y, -z), (-y, -x, -z), (x, -y, -z), (y, x, -z), (z,y, -x), (-y, z, -x), (-z, -y, -x), (y, -z, -x), (x,-z, y), (z,x,y), (-x, z, y), (-z, -x, y), (x, z, -y), (-z, x, -y), (-x, -z, -y), (z, -x, -y)]
+  
+
+given
+ - list of scanner coordinates for sensor 1
+ - list of scanner coordinates for sensor 2
+
+
+Compute set of pairwise distances within each scanner
+
+if two sensors have >= 66 pairwise distances overlap, then they can be matched
+
+Set of synchronized scanners
+put the first scanner in there
+
+compute the # of pairwise overlaps between each pair of scanners?
+
+
+
+s0 = [ (404,-588,-901),
+(528,-643,409),
+(-838,591,734),
+(390,-675,-793),
+(-537,-823,-458),
+(-485,-357,347),
+(-345,-311,381),
+(-661,-816,-575),
+(-876,649,763),
+(-618,-824,-621),
+(553,345,-567),
+(474,580,667),
+(-447,-329,318),
+(-584,868,-557),
+(544,-627,-890),
+(564,392,-477),
+(455,729,728),
+(-892,524,684),
+(-689,845,-530),
+(423,-701,434),
+(7,-33,-71),
+(630,319,-379),
+(443,580,662),
+(-789,900,-551),
+(459,-707,401) ]
+
+s1 = [(686,422,578),
+(605,423,415),
+(515,917,-361),
+(-336,658,858),
+(95,138,22),
+(-476,619,847),
+(-340,-569,-846),
+(567,-361,727),
+(-460,603,-452),
+(669,-402,600),
+(729,430,532),
+(-500,-761,534),
+(-322,571,750),
+(-466,-666,-811),
+(-429,-592,574),
+(-355,545,-477),
+(703,-491,-529),
+(-328,-685,520),
+(413,935,-424),
+(-391,539,-444),
+(586,-435,557),
+(-364,-763,-893),
+(807,-499,-711),
+(755,-354,-619),
+(553,889,-390)]
+
+import itertools
+
+def d(x,y):
+  return (x[0] - y[0])**2 + (x[1] - y[1])**2 + (x[2] - y[2])**2
+
+d0 = { d(x,y) for x,y in itertools.combinations(s0, 2) }
+d1 = { d(x,y) for x,y in itertools.combinations(s1, 2) }
+
+if len(d0.intersection(d1)) >= 66 
+
+
+Transform s1 by rotation 24 ways
+
+is there a mapping from s0 to f(s1) ?
+for each beacon seen by s0, look at all beacons seen by s1
+  compute distance between the two beacons, this is the offset between s0 and s1?
+  then adding this offset to all of the sensors in s1 should align it with at least 12 sensors seen by s0
+  
+  
+  600?
+  
+Left hand side
+Matrix of the S1 points
+
+Right hand side
+R*x + (s0 - s1) = 
+Matrix of the S0 points

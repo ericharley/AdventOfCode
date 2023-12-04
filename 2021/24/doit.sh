@@ -1,0 +1,9 @@
+./a.out 1 > 1.txt & 
+./a.out 2 > 2.txt & 
+./a.out 3 > 3.txt &
+./a.out 4 > 4.txt &
+./a.out 5 > 5.txt &
+./a.out 6 > 6.txt &
+./a.out 7 > 7.txt &
+./a.out 8 > 8.txt &
+./a.out 9 > 9.txt &
