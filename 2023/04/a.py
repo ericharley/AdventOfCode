@@ -1,13 +1,14 @@
 filename = 'input.txt'
-lines = [line.split(': ')[1].split('|') for line in open(filename).read().splitlines()]
+lines = [line for line in open(filename).read().splitlines()]
 
 deck = {}
 hand = {}
 
 total = 0
 for k, line in enumerate(lines):
-  a = set(line[0].split())
-  b = set(line[1].split())
+  a,b = line.split(': ')[1].split('|')
+  a = set( a.split() )
+  b = set( b.split() )
   n = len(a & b)
 
   # Part 1
