@@ -1,0 +1,3 @@
+n = 1; While[10*DivisorSigma[1, n] < presents, n++]; n
+
+n = 1; While[11 DivisorSum[n, # &, 50 # >= n &] < 29000000, n++]; n
