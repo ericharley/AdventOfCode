@@ -1,0 +1,9 @@
+20 moves to wall
+30 moves to other side
+3 to top row
+13 to next to G
+
+have to move G 35 times each takes 5 moves and then one last time
+
+20+30+3+13+35*5+1
+

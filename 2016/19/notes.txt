@@ -1,0 +1,11 @@
+resets at powers of 3
+
+counts by 1 until
+
+then counts by 2 until ...
+
+[3**3 + 1,(3**3)*2,3**4]
+reset to 1 at first number
+count by 2 after second number until third number
+
+
