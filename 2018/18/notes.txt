@@ -1,0 +1,18 @@
+After N iterations the hash is:
+N	Hash
+1	8249385152184772353
+575	-8408631773895095250
+603	-8408631773895095250
+631	-8408631773895095250
+
+period is 28 ?
+
+(1000000000 - 575)
+
+575 iterations to get onto the cycle
+
+999999425 remaining
+
+5 after 
+
+stop after 608?
