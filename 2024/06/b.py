@@ -4,7 +4,8 @@ def g(r,c):
   return c - r*1j
 
 board = { g(r,c) : grid[r][c] for r,row in enumerate(grid) for c,col in enumerate(row) }
-starting_pos, starting_heading = [(z,{'^':+1j, 'v':-1j, '<':-1, '>':+1 }[h]) for z,h in board.items() if h not in '.#' ][0]
+starting_pos = [z for z,h in board.items() if h not in '.#' ][0]
+starting_heading = +1j
 m = { b for b in board if board[b] == '#' }
 
 def do_move(pos,heading):
