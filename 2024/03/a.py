@@ -1,9 +1,7 @@
 import re
+from operator import mul
 
 line = ''.join(open('input.txt').readlines()).replace('\n','')
-
-def mul(x,y):
-  return x*y
 
 # Part 1
 print( sum(eval(m) for m in re.findall(r'mul\(\d+,\d+\)', line)) )
