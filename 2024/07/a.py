@@ -1,3 +1,5 @@
+from operator import mul, add
+
 lines = open('input.txt').read().splitlines()
 
 data = []
@@ -5,23 +7,19 @@ for line in lines:
   a, *ns = list(map(int,line.replace(':','').split(' ')))
   data += [(a,ns)]
 
-def solve(data, ops):
-  t = 0
-  for a,ns in data:
-    results = {ns[0]}
+def f(target, nums):
+    results = { nums[0] }
 
-    for n in ns[1:]:
+    for n in nums[1:]:
       results = {op(x,n) for x in results for op in ops}
 
-    if a in results:
-      t += a
-
-  return t
+    return target in results
 
 # Part 1
-from operator import mul, add
-print( solve(data, [mul, add]) )
+ops = [mul, add]
+print( sum([a for a,ns in data if f(a,ns)]) )
 
 # Part 2
-f = lambda a,b : int(f'{a}{b}')
-print( solve(data, [mul, add, f]) )
+ff = lambda a,b : int(f'{a}{b}')
+ops = [mul, add, ff]
+print( sum([a for a,ns in data if f(a,ns)]) )
