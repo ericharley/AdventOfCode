@@ -1,17 +1,14 @@
 grid = open('input.txt').read().splitlines()
 
-def g(r,c):
-  return c - r*1j
-
-board = { g(r,c) : grid[r][c] for r,row in enumerate(grid) for c,col in enumerate(row) }
+board = { complex(c,r) : ch for r,row in enumerate(grid) for c,ch in enumerate(row) }
 starting_pos = [z for z,h in board.items() if h not in '.#' ][0]
-starting_heading = +1j
+starting_heading = -1j
 m = { b for b in board if board[b] == '#' }
 
 def do_move(pos,heading):
   _pos, _heading = pos + heading, heading
   if _pos in m:
-    _pos, _heading = pos, heading * -1j
+    _pos, _heading = pos, heading * +1j
   return _pos, _heading
 
 # Part 1
