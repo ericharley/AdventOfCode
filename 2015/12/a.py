@@ -7,7 +7,8 @@ line = open('input.txt').read().strip()
 #  t += int(m)
 #print(t)
 
-data = eval(line)
+import ast
+data = ast.literal_eval(line)
 
 def a(data):
  if type(data) is str:
