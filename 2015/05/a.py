@@ -15,20 +15,17 @@ def is_nice(s):
 #  if sum([1 for x in [a+b for a,b in zip(s,s[1:])] if x in ['ab', 'cd', 'pq', 'xy']]) > 0:
 #    return False
 
-  if re.findall(r'ab|cd|pq|xy', s) or not re.findall(r'(.*[aeiou]){3}', s) or not re.findall(r'(.)\1', s):
-    return False
-
-  return True
+  return bool(not re.findall(r'ab|cd|pq|xy', s) and re.findall(r'(.*[aeiou]){3}', s) and re.findall(r'(.)\1', s))
 
 def is_nice2(s):
-  return re.findall(r'(..).*\1', s) and re.findall(r'(.).\1', s)
+  return bool(re.findall(r'(..).*\1', s) and re.findall(r'(.).\1', s))
 
 
-lines = open('input.txt').read().strip().split('\n')
+inp = open('input.txt').readlines()
 
 # Part 1
-print(sum([1 for line in lines if is_nice(line)]))
+print(sum(is_nice(x) for x in inp))
 
 # Part 2
-print(sum([1 for line in lines if is_nice2(line)]))
+print(sum(is_nice2(x) for x in inp))
   

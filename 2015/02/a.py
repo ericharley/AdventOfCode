@@ -1,5 +1,6 @@
-lines = open('input.txt').read().strip().split('\n')
+lines = open('input.txt').readlines()
 
+# Part 1
 total = 0
 for line in lines:
    l,w,h = map(int, line.split('x'))
@@ -8,6 +9,7 @@ for line in lines:
 print(total)
 
 
+# Part 2
 total = 0
 for line in lines:
    l,w,h = map(int, line.split('x'))
