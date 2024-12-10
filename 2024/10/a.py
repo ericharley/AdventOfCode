@@ -1,30 +1,25 @@
-from collections import defaultdict
-
 grid = open('input.txt').read().splitlines()
-board  = {(r,c) : int(ch) for r,row in enumerate(grid) for c,ch in enumerate(row) if ch != '.'}
+board  = {complex(r,c) : int(ch) for r,row in enumerate(grid) for c,ch in enumerate(row) if ch != '.'}
 groups = {v : [k for k in board if board[k] == v] for v in board.values() }
 
-def neighbors(a,b):
-  return abs(a[0] - b[0]) + abs(a[1] - b[1]) == 1
+# set of points reachable in 9 steps
+def g(trailhead):
+  reachable = { trailhead }
+  for v in range(1,10):
+    reachable = { b for a in reachable for b in groups[v] if abs(b-a)==1 }
+  return reachable
 
-s,t = 0,0
+# how many ways to get from a to 0
+def f(a):
+ v = board[a]
+ if v == 0:
+   return 1
 
-for trailhead_id in groups[0]:
+ return sum([f(b) for b in groups[v-1] if abs(b-a) == 1])
 
-  reachable = {(trailhead_id,1)}
+# Part 1
+print(sum(len(g(trailhead)) for trailhead in groups[0]))
 
-  for i in range(9):
-    next_reachable = defaultdict(int)
-    for trailhead,w in reachable:
-      for b in groups[i+1]:
-        if neighbors(trailhead,b):
-          next_reachable[b] += w
-
-    reachable = { (b,w) for b,w in next_reachable.items() }
-
-  t += len(reachable)
-  for _,b in reachable:
-    s += b
-
-print(t)
-print(s)
+# Part 2
+m = {trailend : f(trailend) for trailend in groups[9]}
+print(sum(ways for ways in m.values()))
