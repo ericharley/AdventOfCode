@@ -1,0 +1,47 @@
+bst 4
+bxl 6
+cdv 5
+bxc 4
+bxl 7
+adv 3
+out 5
+jnz 0
+
+do:
+
+  b = a % 8       # bst 4
+  b = b ^ 6       # bxl 6
+  c = a // (2**b) # cdv 5
+  b = b ^ c       # bxc 4
+  b = b ^ 7       # bxl 7
+  a = a // (2**3) # adv 3
+  print(b % 8 )   # out 5
+
+while a != 0
+  b = a % 8       # bst 4
+  b = b ^ 6       # bxl 6
+  c = a // (2**b) # cdv 5
+  b = b ^ c       # bxc 4
+  b = b ^ 7       # bxl 7
+  a = a // (2**3) # adv 3
+  print(b % 8 )   # out 5
+
+
+
+while a != 0
+  b = a % 8       # extract the lowest byte of a
+  b = b ^ 6       # flip the two high bits of b
+  c = a // (2**b) # shift a right b bits
+  b = b ^ c       # 
+  b = b ^ 7       # flip the bits of b
+  a = a // (2**3) # shift a right 3 bits, taking the lowest byte off
+  print(b % 8)    # print b as a byte...
+
+
+consider a is a list of octal digits (0,1,2,3,4,5,6,7)
+
+the output of a digit is a function of the current digit and the next digit.
+
+
+
+8
